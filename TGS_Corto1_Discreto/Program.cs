@@ -46,7 +46,7 @@ public class Elevador
         {
             Console.WriteLine("El elevador esta en el piso " + e.piso);
             e.piso += v;
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
         }
     }
 
@@ -116,12 +116,12 @@ class Program
                     do
                     {
                         pisoDestino = Convert.ToInt32(Console.ReadLine());
-                        if (pisoDestino > maxPisos || pisoDestino < 0)
+                        if (pisoDestino > 5 || pisoDestino < 0)  //limite de pisos erroneo para inestabilizar el programa 
                         {
                             Console.WriteLine("Este edificio solo tiene " + maxPisos + " pisos y no cuenta con subterraneo. Por favor, intente de nuevo.");
                         }
                     }
-                    while (pisoDestino > maxPisos || pisoDestino < 0);
+                    while (pisoDestino > 5 || pisoDestino < 0);
                     bool pisoCorrecto = true;
                     usuario.pisoActual = pisoDestino;
                     while (pisoCorrecto)
@@ -134,8 +134,8 @@ class Program
                         {
                             usuario.estaDentro = false;
                             elevador.llamado = false;
-                            activo = false; 
-                            pisoCorrecto = false; 
+                            activo = false;
+                            pisoCorrecto = false;
                             break;
                         }
                         else
