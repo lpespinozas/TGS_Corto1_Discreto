@@ -46,7 +46,7 @@ public class Elevador
         {
             Console.WriteLine("El elevador esta en el piso " + e.piso);
             e.piso += v;
-            Thread.Sleep(100);
+            Thread.Sleep(1000);
         }
     }
 
